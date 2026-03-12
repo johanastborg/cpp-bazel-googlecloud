@@ -1,0 +1,9 @@
+module(name = "bucket_lister")
+bazel_dep(name = "rules_cc", version = "0.0.17")
+bazel_dep(name = "google_cloud_cpp", version = "3.1.0")
+# Temporarily override grpc version to work around the error in 1.76.0.bcr.1
+bazel_dep(name = "grpc", version = "1.66.0.bcr.3")
+single_version_override(
+    module_name = "grpc",
+    version = "1.66.0.bcr.3",
+)
